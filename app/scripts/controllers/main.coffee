@@ -7,4 +7,3 @@ angular.module('sfdcSplashboardApp')
       'AngularJS',
       'Karma'
     ]
-    console.log 'awesomeness'
