@@ -28,7 +28,7 @@ You can lint the javascript and CoffeeScript code using:
 
     $ grunt lint
 
-The config can be changed in `./jshintrc' and './coffeelintrc`.
+The config can be changed in `./jshintrc` and `./coffeelintrc`.
 
 ## Links
 
