@@ -26,7 +26,7 @@ module.exports = function (grunt) {
     event: ['added', 'changed'],
     nospawn: true,
     livereload: LIVERELOAD_PORT
-  }
+  };
 
   try {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
@@ -361,15 +361,15 @@ module.exports = function (grunt) {
   grunt.event.on('watch', function(action, filepath, target) {
     var ext = '';
     switch (target) {
-      case 'coffee':
-        ext = '.js';
-        break;
-      case 'jade':
-        ext = '.html';
-        break;
-      case 'stylus':
-        ext = '.css';
-        break;
+    case 'coffee':
+      ext = '.js';
+      break;
+    case 'jade':
+      ext = '.html';
+      break;
+    case 'stylus':
+      ext = '.css';
+      break;
     }
     var dest = '.tmp' + filepath.substring(filepath.indexOf('/'), filepath.lastIndexOf('.')) + ext;
     grunt.config.set(target + '.single.src', filepath);
@@ -410,6 +410,11 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin'
+  ]);
+
+  grunt.registerTask('lint', [
+    'jshint',
+    'coffeelint'
   ]);
 
   grunt.registerTask('default', [
