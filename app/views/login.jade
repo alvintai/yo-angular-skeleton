@@ -1,0 +1,25 @@
+form(ng-submit="login()")
+  fieldset
+    legend Legend
+    .form-group
+      label(for="exampleInputEmail") Email address
+      input#exampleInputEmail.form-control(type="text", placeholder="Enter Email", ng-model = "credentials.email", required)
+    .form-group
+      label(for="exampleInputPassword") Password
+      input#exampleInputPassword.form-control(type="password", placeholder="Password", ng-model="credentials.password", required)
+    button.btn.btn-default(type="submit") Submit
+
+//- <form ng-submit="login()">
+//-   <fieldset>
+//-     <legend>Legend</legend>
+//-     <div class="form-group">
+//-       <label for="exampleInputEmail">Email address</label>
+//-       <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email" ng-model="credentials.email" required>
+//-     </div>
+//-     <div class="form-group">
+//-       <label for="exampleInputPassword">Password</label>
+//-       <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" ng-model="credentials.password" required>
+//-     </div>
+//-     <button type="submit" class="btn btn-default">Submit</button>
+//-   </fieldset>
+//- </form>

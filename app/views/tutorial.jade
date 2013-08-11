@@ -1,0 +1,41 @@
+div
+  div Search: 
+    input(ng-model="query")
+    p Sort by:
+      select(ng-model="orderProp")
+        option(value="name") Alphabetical
+        option(value="age") Newest
+
+  ul
+    li(ng-repeat="phone in phones | filter:query | orderBy:orderProp")
+      {{phone.name}}
+      p
+      {{phone.snippet}}
+      p
+      Age: {{phone.age}}
+
+div {{query}}
+
+//- <div ng-controller="tutCtrl">
+
+//- <div class = "">
+//-   Seach: <input ng-model="query">
+//-   Sort by: <select ng-model="orderProp">
+//-   <option value = "name">Alphabetical</option>
+//-   <option value = "age">Newest</option>
+//- </select>
+
+//- </div>
+//-   <ul>
+//-     <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+//-       {{phone.name}}
+//-       <p>
+//-         {{phone.snippet}}
+//-       </p>
+//-       <p>Age: {{phone.age}}</p>
+//-     </li>
+//-   </ul>
+
+//- </div>
+
+//- <div>  {{query}}</div>
