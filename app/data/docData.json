@@ -1,0 +1,24 @@
+[
+  {
+    docName: "Supplier Procedure"
+    docRev: "B"
+    docNumber: "SOP001"
+    docLast: "August 22, 2013"
+    docBlurb: "This is the supplier procedure and it is intended to show you how to purchase things from suppliers"
+  },
+  {
+    docName: "Complaint Procedure"
+    docRev: "E"
+    docNumber: "SOP002"
+    docLast: "April 2, 2012"
+    docBlurb: "This is the complaint procedure and it is intended to show you how to submit a complaint"
+  },
+  {
+    docName: "Complaint Procedure"
+    docRev: "E"
+    docNumber: "SOP002"
+    docLast: "April 2, 2012"
+    docBlurb: "This i
+
+  }
+]

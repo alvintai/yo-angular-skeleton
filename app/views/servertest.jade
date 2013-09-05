@@ -1,0 +1,5 @@
+ div(ng-controller="", ng-init="users= #{JSON.stringify(users)}")
+    h1= title
+    p Welcome to #{title}
+    ul
+      li(ng-repeat="user in users") {{user.name}} - {{user.email}

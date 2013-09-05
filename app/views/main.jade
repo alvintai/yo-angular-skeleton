@@ -1,6 +1,14 @@
+//- FIXED NAVIGATION BAR
 div.navbar.navbar-fixed-top.navbar-inverse
   div.container
     a.navbar-brand(href="#") PLM510
+    ul.nav.navbar-nav.pull-right
+      li.dropdown
+        a.dropdown-toggle(data-toggle="dropdown") John Doe
+          span.caret
+        ul.dropdown-menu
+          li 
+            a(href="#/login") Logout
     ul.nav.navbar-nav
       li.active 
         a(href="#") Home
@@ -8,12 +16,6 @@ div.navbar.navbar-fixed-top.navbar-inverse
         a(href="#") Link
       li 
         a(href="#") Link2
-      li.dropdown.pull-right
-        a.dropdown-toggle(data-toggle="dropdown") John Doe
-          span.caret
-        ul.dropdown-menu
-          li 
-            a(href="#/login") Logout
 div.container
   div.row
     div.col-2
@@ -21,11 +23,11 @@ div.container
         li.nav-header List Header
         li(ng-repeat="tab in sideTabs", ng-class="{active : $first}")
           a(href="") {{tab}}
-        li.divider
+            span.badge.pull-right {{globalTabCounter}}
     div.col-10
-      ul.nav.nav-tabs
-        li(ng-repeat="tab in tabs", ng-class="{active : $first}")
-          a {{tab.tabTitle}}
+      ul.nav.nav-tabs#tabView
+        li(ng-repeat="tab in tabs", ng-class="{active : $first}", ng-click="openTab($index)")
+          a(data-toggle="tab", data-target="#tab{{tab.tabId}}") {{tab.tabTitle}}
             &nbsp; &nbsp;
             span.close-x(ng-click="closeTab($index)")
               img(src="http://placehold.it/15x15")
@@ -39,16 +41,24 @@ div.container
               a(href="#/tutorial") Tutorial
         li
           a(ng-click="addTab()") +
-      div.hero-unit
-        h1 'Allo, 'Allo!
-        p You now have
-        ul
-          li(ng-repeat="thing in awesomeThings") {{thing}}
-        p installed.
-        h3 Enjoy coding! - Yeoman is awesome!
-        a(href="/#/login") Login Here
-        p
-        a(href="/#/tutorial") Tutorial
+      div.tab-content
+        div.tab-pane.hero-unit(ng-repeat="tab in tabs", ng-class="{active : $first}", id="tab{{tab.tabId}}")
+          {{tab.tabContent}}
+          div.list-group
+            {{docs}}
+            a.list-group-item(href="#", ng-repeat="doc in docs")
+              h4.list-group-item-heading {{doc.docName}}
+              p.list-group-item-text {{doc.docBlurb}}
+
+          //- h1 'Allo, 'Allo!
+          //- p You now have
+          //- ul
+          //-   li(ng-repeat="thing in awesomeThings") {{thing}}
+          //- p installed.
+          //- h3 Enjoy coding! - Yeoman is awesome!
+          //- a(href="/#/login") Login Here
+          //- p
+          //- a(href="/#/tutorial") Tutorial
 
 
 
